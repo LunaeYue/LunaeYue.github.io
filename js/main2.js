@@ -5,6 +5,10 @@ $(function(){
     
     $("#New_row").hide();
     $("#New_channel").hide();
+    $("#New_problem").hide();
+    $("#New_problem2").hide();
+    $("#New_problem3").hide();
+    $("#New_problem4").hide();
 })
 
 
