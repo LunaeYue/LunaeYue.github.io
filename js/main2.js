@@ -12,6 +12,8 @@ $(function(){
     
     $("#NEW_header").hide();
     $("#NEW_nav").hide();
+    
+    $("#NEW_button").hide();
 })
 
 $(document).ready(function () {
@@ -42,6 +44,9 @@ function ShowExist(){
     $("#NEW_header").show();
     $("#EXIST_nav").hide();
     $("#NEW_nav").show();
+    $("#EXIST_button").hide();
+    $("#NEW_button").show();
+    
 }
 
 function ShowNew(){
@@ -61,4 +66,6 @@ function ShowNew(){
     $("#NEW_header").hide();
     $("#EXIST_nav").show();
     $("#NEW_nav").hide();
+    $("#EXIST_button").show();
+    $("#NEW_button").hide();
 }

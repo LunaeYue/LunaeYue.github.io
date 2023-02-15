@@ -2,6 +2,8 @@ $(function(){
     $("#Existing").on("click", ShowExist);
     $("#New").on("click", ShowNew);
 //    $("#team_opt").on("click", ShowTeamOpt);
+    $("#add_time_opt").on("click", ShowTimeOpt);
+    $("#remove_time_opt").on("click", RemoveTimeOpt);
     
     
     $("#Existing_row").hide();
@@ -11,6 +13,15 @@ $(function(){
     
     $("#EXIST_header").hide();
     $("#EXIST_nav").hide();
+    
+    $("#option2").hide();
+    $("#option2_1").hide();
+    $("#option2_2").hide();
+    $("#option2_3").hide();
+    $("#option2_4").hide();
+    $("#option2_5").hide();
+    
+    $("#EXIST_button").hide();
 })
 
 $(document).ready(function () {
@@ -40,6 +51,8 @@ function ShowExist(){
     $("#NEW_header").hide();
     $("#EXIST_nav").show();
     $("#NEW_nav").hide();
+    $("#EXIST_button").show();
+    $("#NEW_button").hide();
 }
 
 function ShowNew(){
@@ -59,9 +72,29 @@ function ShowNew(){
     $("#NEW_header").show();
     $("#EXIST_nav").hide();
     $("#NEW_nav").show();
+    $("#EXIST_button").hide();
+    $("#NEW_button").show();
 }
 
 //function ShowTeamOpt(){
 //    $("#show_me").hide();
 //    $("#show_team").show();
 //}
+
+function ShowTimeOpt(){
+    $("#option2").show();
+    $("#option2_1").show();
+    $("#option2_2").show();
+    $("#option2_3").show();
+    $("#option2_4").show();
+    $("#option2_5").show();
+}
+
+function RemoveTimeOpt(){
+    $("#option2").hide();
+    $("#option2_1").hide();
+    $("#option2_2").hide();
+    $("#option2_3").hide();
+    $("#option2_4").hide();
+    $("#option2_5").hide();
+}
