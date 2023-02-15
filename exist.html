@@ -11,7 +11,8 @@
 table, td, div, h1, p {font-family: "neue-haas-grotesk-text", sans-serif;}
 /*table, td {border:1px solid #000000 !important;}*/
 input[type="radio"] {margin-right: 10px;}
-input[type='radio']:after {width: 15px; height: 15px; border-radius: 15px; top: -2px; left: -1px; position: relative; background-color: #FFFFFF; content: ''; display: inline-block; visibility: visible; border: 1px solid black;}   input[type='radio']:checked:after { width: 15px; height: 15px; border-radius: 15px; top: -2px; left: -1px; position: relative; background-color: #000000; content: ''; display: inline-block; visibility: visible; border: 1px solid black;}    
+input[type='radio']:after {width: 15px; height: 15px; border-radius: 15px; top: -2px; left: -1px; position: relative; background-color: #FFFFFF; content: ''; display: inline-block; visibility: visible; border: 1px solid black;}   input[type='radio']:checked:after { width: 15px; height: 15px; border-radius: 15px; top: -2px; left: -1px; position: relative; background-color: #000000; content: ''; display: inline-block; visibility: visible; border: 1px solid black;}   
+input[type="text"] {padding-left: 10px;}
 </style>
 </head>
 
@@ -27,8 +28,25 @@ input[type='radio']:after {width: 15px; height: 15px; border-radius: 15px; top: 
                                 <td style="padding:30px 0 0 40px;font-size: 30px; cursor: pointer">
                                     <b><a href="index.html">Employee Experience <br>Demand</a></b>
                                 </td>
-                            </tr>
-                                <tr>
+                                </tr>
+                                <tr id="NEW_nav">
+                                    <td style="padding:0;">
+                                        <table role="presentation" style="width:100%;border-collapse:collapse;border:0;border-spacing:0;font-size: 14px;">
+                                        <tr>
+                                            <td style="padding:0 0 0 430px;vertical-align:top;">
+                                                <b>FORM</b>
+                                            </td>
+                                            <td style="padding:0 0 0 20px;vertical-align:top; font-family: neue-haas-grotesk-display, sans-serif; font-weight: 500; font-style: normal;">
+                                                SCHEDULE
+                                            </td>
+                                            <td style="padding:0 40px 0 20px;vertical-align:top;font-family: neue-haas-grotesk-display, sans-serif; font-weight: 500; font-style: normal;">
+                                                CONFIRM
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    </td>
+                                </tr>
+                                <tr id="EXIST_nav">
                                     <td style="padding:0;">
                                         <table role="presentation" style="width:100%;border-collapse:collapse;border:0;border-spacing:0;font-size: 14px;">
                                         <tr>
@@ -42,9 +60,14 @@ input[type='radio']:after {width: 15px; height: 15px; border-radius: 15px; top: 
                                     </table>
                                     </td>
                                 </tr>
-                                <tr>
+                                <tr id="NEW_header">
                                 <td style="padding:20px 0 0 40px;font-size: 28px;color: #18a7d7;">
                                     <b><u>NEW</u></b>
+                                </td>
+                                </tr>
+                                <tr id="EXIST_header">
+                                <td style="padding:20px 0 0 40px;font-size: 28px;color: #18a7d7;">
+                                    <b><u>EXISTING</u></b>
                                 </td>
                                 </tr>
                                 <tr>
@@ -124,7 +147,7 @@ input[type='radio']:after {width: 15px; height: 15px; border-radius: 15px; top: 
                                                           <label for="html">Global</label> &nbsp;&nbsp;&nbsp;
                                                           <input type="radio" id="Local" name="scope" value="Local">
                                                           <label for="css">Local</label>
-                                                        <input type="text" id="name" name="name" style="height: 40px; border: none; background: #f5f5f5; outline: none; margin-left: 20px">
+                                                        <input type="text" id="name" name="name" placeholder="State Countries" style="height: 40px; border: none; background: #f5f5f5; outline: none; margin-left: 20px">
                                                       
                                                     </form>
                                                 </td>
@@ -202,8 +225,8 @@ input[type='radio']:after {width: 15px; height: 15px; border-radius: 15px; top: 
                                                 </td>
                                                 <td style="width:20px;padding:0;font-size:0;line-height:0;">&nbsp;</td>
                                                 <td style="width:310px;padding:10px 0 0 0;vertical-align:top;font-family: neue-haas-grotesk-display, sans-serif; font-weight: 400;font-style: normal;">
-                                                    <form action="" autocomplete="off" style="width: 190px;"  >
-                                                          <input type="radio" id="Existing" name="type" value="Existing" checked="checked" >
+                                                    <form action="" autocomplete="off" style="width: 190px;" >
+                                                          <input type="radio" id="Existing" name="type" value="Existing" checked="checked">
                                                           <label for="css">Existing</label>
                                                     </form>
                                                 </td>
@@ -292,19 +315,20 @@ input[type='radio']:after {width: 15px; height: 15px; border-radius: 15px; top: 
                                                 <td style="width:340px;padding:10px 0 0 0;vertical-align:top;font-family: neue-haas-grotesk-display, sans-serif; font-weight: 400;font-style: normal;">
                                                     Select Books/ Chapters
                                                     <form>
-                                                      <select id="books" name="country" style="width: 200px; height: 42px; border: none; background: #f5f5f5; outline: none; font-size: 16px; margin-top: 10px;" >
-                                                          <option value="au">&nbsp; All About Me</option>
-                                                          <option value="ca">&nbsp; All About My Team</option>
+                                                      <select id="about_list" onchange="myFunction()" name="country" style="width: 250px; height: 42px; border: none; background: #f5f5f5; outline: none; font-size: 16px; margin-top: 10px;" >
+                                                          <option value="item1">&nbsp; All About Me</option>
+                                                          <option value="item2" id="team_opt">&nbsp; All About My Team</option>
                                                       </select>
                                                     </form>
-                                                    <form>
-                                                      <select id="chapters" name="country" style="width: 200px; height: 42px; border: none; background: #f5f5f5; outline: none; font-size: 16px; margin-top: 10px;" >
-                                                          <option value="au">&nbsp; Goals & Performance</option>
-                                                          <option value="ca">&nbsp; Individual Development Plan</option>
-                                                          <option value="usa">&nbsp; My Pay & Benefits</option>
-                                                          <option value="usa">&nbsp; My Time & Leave of Absence</option>
+                                                    <div id="show_me"> <form>
+                                                      <select id="team_selection" name="country" style="width: 250px; height: 42px; border: none; background: #f5f5f5; outline: none; font-size: 16px; margin-top: 10px;" >
+                                                          <option value="">&nbsp; Goals & Performance</option>
+                                                          <option value="">&nbsp; Individual Development Plan</option>
+                                                          <option value="">&nbsp; My Pay & Benefits</option>
+                                                          <option value="">&nbsp; My Time & Leave of Absence</option>
                                                       </select>
-                                                    </form>
+                                                    </form></div>
+                                                    <p id="show_team"></p>
                                                 </td>
                                             </tr>
                                         </table>
@@ -505,7 +529,7 @@ input[type='radio']:after {width: 15px; height: 15px; border-radius: 15px; top: 
                                                 <td style="width:20px;padding:0;font-size:0;line-height:0;">&nbsp;</td>
                                                 <td style="width:310px;padding:10px 0 0 0;vertical-align:top;font-family: neue-haas-grotesk-display, sans-serif; font-weight: 400;font-style: normal;">
                                                     <div style="width: 200px; height: 42px; border: 2px solid #eaeaea; display: flex; flex-wrap: nowrap; justify-content: space-between">
-                                                        <div style="margin-left: 10px; margin-top: 10px;">Upload</div>
+                                                        <div style="margin-left: 12px; margin-top: 10px;">Upload</div>
                                                         <img src="https://user-images.githubusercontent.com/73974148/218710926-998d1e50-44c7-4980-bbbb-03ec2273b50b.png" style="margin-top: 3px">
                                                     </div>
                                                 </td>
@@ -543,6 +567,5 @@ input[type='radio']:after {width: 15px; height: 15px; border-radius: 15px; top: 
 <script src="js/jquery-3.6.0.min.js"></script>
 <script src="js/main2.js"></script>
 <script src="js/gsap.min.js"></script>
-    
-</html>
 
+</html>

@@ -1,12 +1,28 @@
 $(function(){
     $("#Existing").on("click", ShowExist);
     $("#New").on("click", ShowNew);
+//    $("#team_opt").on("click", ShowTeamOpt);
     
     
     $("#Existing_row").hide();
     $("#Existing_channel").hide();
+    $("#Existing_channel2").hide();
+    $("#Existing_channel3").hide();
+    
+    $("#EXIST_header").hide();
+    $("#EXIST_nav").hide();
 })
 
+$(document).ready(function () {
+    $("#about_list").change(function () {
+        var val = $(this).val();
+        if (val == "item1") {
+            $("#team_selection").html("<option value='test'> &nbsp;&nbsp;Goals & Performance</option><option value='test2'> &nbsp;&nbsp;Individual Development</option><option value='test3'> &nbsp;&nbsp;My Pay & Benefits</option><option value='test4'> &nbsp;&nbsp;My Time & Leave of Absence</option>");
+        } else if (val == "item2") {
+            $("#team_selection").html("<option value='test'> &nbsp;&nbsp;Recruitment & On/Offboarding</option><option value='test2'> &nbsp;&nbsp;Performance & Rewards</option><option value='test3'> &nbsp;&nbsp;Talent Management</option><option value='test4'> &nbsp;&nbsp;Leadership</option>");
+        } 
+    });
+});
 
 function ShowExist(){
     $("#New_row").hide();
@@ -20,6 +36,10 @@ function ShowExist(){
     $("#Existing_channel2").show();
     $("#Existing_channel3").show();
     $( "#New" ).prop( "checked", false );
+    $("#EXIST_header").show();
+    $("#NEW_header").hide();
+    $("#EXIST_nav").show();
+    $("#NEW_nav").hide();
 }
 
 function ShowNew(){
@@ -35,4 +55,13 @@ function ShowNew(){
     $("#Existing_channel3").hide();
     $("#Existing_row").hide();
     $( "#Existing" ).prop( "checked", false );
+    $("#EXIST_header").hide();
+    $("#NEW_header").show();
+    $("#EXIST_nav").hide();
+    $("#NEW_nav").show();
 }
+
+//function ShowTeamOpt(){
+//    $("#show_me").hide();
+//    $("#show_team").show();
+//}
